@@ -1,0 +1,168 @@
+html {
+  box-sizing: border-box;
+}
+
+*, 
+*:before, 
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+
+:root {
+  --orange:hsl(31, 77%, 52%);
+  --sky:hsl(184, 100%, 22%);
+  --dark-green:hsl(179, 100%, 13%);
+  --font:'Zilla Slab', serif;
+  --alice-blue:aliceblue;
+}
+
+body {
+  background-color: hsl(0, 0%, 95%);
+  font-size: 15px;
+}
+
+#box-container {
+  display: flex;
+  height: 100vh;
+  align-items: center; /*Para alinear los hijos verticalmente*/
+  justify-content: center; /*Para alinear el contenedor horizontalmente*/
+  flex-direction: row; /*Para poner los hijos en fila*/
+  flex-wrap: wrap; /*Para que los items se bajen de ser necesario*/
+}
+
+.box {
+  position: relative;
+  width: 18em;
+  height: 30em;
+}
+
+.box:hover {
+  transform: translateY(-1em);
+  transition: 1s;
+}
+
+.box:not(hover) {
+  transition: 1s;
+}
+
+@keyframes box-animation {
+  from{
+    transform: translateY(-200%);
+  }
+
+  to{
+    transform: translate(0);
+  }
+}
+
+#orange-box {
+  background-color: var(--orange);
+  border-radius: .5em 0em 0em .5em;
+  animation: box-animation 2s;
+}
+
+#sky-box {
+  background-color: var(--sky);
+  animation: box-animation  2.1s;
+}
+
+#green-box {
+  background-color: var(--dark-green);
+  border-radius: 0em .5em .5em 0em;
+  animation: box-animation 2.2s;
+}
+
+@keyframes img-animation {
+  0%{
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(250%) rotateY(180deg);
+  }
+
+  
+  100% {
+    transform: translateX(0) rotateY(0);
+  }
+  
+}
+
+.img-container {
+  position: absolute;
+  left: 2em;
+  top: 2em;
+}
+
+.img-container:hover {
+  animation: img-animation 3s ;
+
+}
+
+.title {
+  position: absolute;
+  left: 15%;
+  top: 25%; 
+  font-family:var(--font);
+  color:  var(--alice-blue);
+  font-weight: 700;
+  text-transform: uppercase;
+  
+}
+
+.text-container {
+  position: absolute;
+  top: 30%;
+  left: 20%;
+  width: 12em;
+  height: 10em;
+}
+
+.text {
+  text-align: left;
+  font-weight: 100;
+  color:var(--alice-blue);
+  margin-top: 20%;
+  line-height: 1.5em;
+  font-family: var(--font);
+}
+
+.button-container {
+  position: absolute;
+  left: 20%;
+  bottom: 10%;
+}
+
+button {
+  font-family:'Zilla Slab',serif ;
+  width: 10em;
+  height: 3em;
+  border: none;
+  border-radius: 1.3em;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:hover {
+  transform: scale(1.1);
+  transition: 1s;
+}
+
+button:not(hover) {
+  transition: 1s;
+}
+
+#button-sedans {
+  color: var(--orange);
+}
+
+#button-vans {
+  color: var(--sky);
+}
+
+#button-luxury {
+  color: var(--dark-green);
+}
