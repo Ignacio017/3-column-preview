@@ -26,7 +26,7 @@ body {
 
 #box-container {
   display: flex;
-  height: 100vh;
+  min-height: 100vh;
   align-items: center; /*Para alinear los hijos verticalmente*/
   justify-content: center; /*Para alinear el contenedor horizontalmente*/
   flex-direction: row; /*Para poner los hijos en fila*/
